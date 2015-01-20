@@ -329,7 +329,7 @@ define("tinymce/ui/KeyboardNavigation", [
 		 * @private
 		 */
 		function cancel() {
-			focusedControl.fire('cancel');
+			return focusedControl.fire('cancel');
 		}
 
 		/**
@@ -377,7 +377,13 @@ define("tinymce/ui/KeyboardNavigation", [
 					break;
 
 				case 27: // DOM_VK_ESCAPE
-					cancel();
+					var cancelEv = cancel();
+					if (cancelEv.isDefaultPrevented()) {
+						e.preventDefault();
+					}
+					if (cancelEv.isPropagationStopped()) {
+						e.stopPropagation();
+					}
 					break;
 
 				case 14: // DOM_VK_ENTER

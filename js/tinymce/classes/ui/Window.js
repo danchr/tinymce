@@ -160,7 +160,9 @@ define("tinymce/ui/Window", [
 				}
 			});
 
-			self.on('cancel', function() {
+			self.on('cancel', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
 				self.close();
 			});
 
