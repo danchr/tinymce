@@ -179,7 +179,7 @@ define("tinymce/ui/MenuButton", [
 			self.aria('role', self.parent() instanceof MenuBar ? 'menuitem' : 'button');
 
 			return (
-				'<div id="' + id + '" class="' + self.classes + '" tabindex="-1" aria-labelledby="' + id + '">' +
+				'<div id="' + id + '" class="' + self.classes + '" tabindex="-1">' +
 					'<button id="' + id + '-open" role="presentation" type="button" tabindex="-1">' +
 						(icon ? '<i class="' + icon + '"' + image + '></i>' : '') +
 						(text ? (icon ? '\u00a0' : '') + self.encode(text) : '') +
