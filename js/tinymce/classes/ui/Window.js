@@ -105,6 +105,7 @@ define("tinymce/ui/Window", [
 			layout: 'flex',
 			containerCls: 'panel',
 			role: 'dialog',
+			ariaRoot: true,
 			callbacks: {
 				submit: function() {
 					this.fire('submit', {data: this.toJSON()});
